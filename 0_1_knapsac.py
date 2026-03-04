@@ -1,6 +1,6 @@
 import random as rd
 class KnapsacPb:
-    def __init__(self,weights:list[int],profits:list[int],capacity:int):
+    def __init__(self,weights:list[int]=[],profits:list[int]=[],capacity:int=0):
         self.n=len(weights)
         self.weights=weights
         self.profits=profits
@@ -8,6 +8,8 @@ class KnapsacPb:
     def generate_pb_inputs(self):
         self.n=rd.randint(1,100)
         self.capacity=rd.randint(1,1000)
+        self.weights=[]
+        self.profits=list()
         for i  in range(self.n):
             self.weights.append(rd.randint(1,100))
             self.profits.append(rd.randint(1,100))
@@ -24,6 +26,8 @@ class KnapsacPb:
         #fill the matrix with zeros
         
         dp=[[0]*(self.capacity+1) for _ in range(self.n+1) ]
-        #...
+        for i in range(1,self.n+1):
+            for w in range(1,self.capacity+1):
+                dp[i][w]=
 
     
